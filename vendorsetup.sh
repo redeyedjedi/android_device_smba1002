@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,3 +22,6 @@
 export USE_CCACHE=1
 add_lunch_combo full_smba1002-userdebug
 add_lunch_combo mdl_smba1002-userdebug
+add_lunch_combo full_cm_smba1002-userdebug
+add_lunch_combo mdl_cm_smba1002-userdebug
+
