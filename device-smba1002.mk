@@ -31,7 +31,7 @@ DEVICE_PACKAGE_OVERLAYS += device/malata/smba1002/overlay
 PRODUCT_LOCALES := en_US
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120
+    ro.sf.lcd_density=132
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -44,8 +44,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/malata/smba1002/prebuilt/init.rc:root/init.rc 
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120
 
 # Harmony Hardware
 PRODUCT_PACKAGES += \
