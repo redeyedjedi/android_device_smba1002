@@ -1,0 +1,8 @@
+[
+ {
+   "account":      "fosser2",
+   "repository":   "android-tegra-nv-3.1.10-rel-15r7",
+   "target_path":  "kernel/malata/smba1002",
+   "revision":     "experimental"
+ }
+]
