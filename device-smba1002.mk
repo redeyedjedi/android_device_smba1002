@@ -32,6 +32,7 @@ PRODUCT_LOCALES := en_US
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=132
+    ro.zram.default=18
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
