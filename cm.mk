@@ -2,7 +2,7 @@ PRODUCT_RELEASE_NAME := SMBA1002
 
 # Inherit some common CM stuff.
 
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/drh/config/drh_common.mk)
 # Inherit device configuration.
 $(call inherit-product, device/malata/smba1002/full_smba1002.mk)
 
