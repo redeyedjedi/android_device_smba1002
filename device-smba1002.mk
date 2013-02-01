@@ -31,7 +31,7 @@ DEVICE_PACKAGE_OVERLAYS += device/malata/smba1002/overlay
 PRODUCT_LOCALES := en_US
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=132
+    ro.sf.lcd_density=120
     ro.zram.default=18
 
 # Set default USB interface
