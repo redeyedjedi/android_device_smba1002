@@ -130,7 +130,7 @@ on fs
     mount yaffs2 mtd@system /system
     mount yaffs2 mtd@system /system ro remount
     mount yaffs2 mtd@userdata /data nosuid nodev
-    mount yaffs2 mtd@cache /cache nosuid nodev
+    #mount yaffs2 mtd@cache /cache nosuid nodev
 
 on post-fs
     # once everything is setup, no need to modify /
@@ -166,30 +166,8 @@ on post-fs
     chown system log /proc/last_kmsg
     chmod 0440 /proc/last_kmsg
 
-# create the lost+found directories, so as to enforce our permissions
+    # create the lost+found directories, so as to enforce our permissions
     mkdir /cache/lost+found 0770 root root
-
-# creates Cache on Internal SD
-        mkdir /data/cache 0771 system system
-        chown system system /data/cache
-        chmod 0771 /data/cache
-
-        mkdir /data/cache/dalvik-cache 0771 system system
-        chown system system /data/cache/dalvik-cache
-        chmod 0771 /data/cache/dalvik-cache
-        symlink /data/cache/dalvik-cache /cache/dalvik-cache
-        chown system system /cache/dalvik-cache
-        chmod 0771 /cache/dalvik-cache
-
-# Gives proper permissions to the symlink for cache
-        chown system cache /cache
-        chmod 0551 /cache
-
-# camera perms
-   chown system camera /dev/video0
-   chmod 0660 /dev/video0
-   chown system camera /dev/video1
-   chmod 0660 /dev/video1
 
 on post-fs-data
     # We chown/chmod /data again so because mount is run as root + defaults
