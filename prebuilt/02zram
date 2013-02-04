@@ -1,0 +1,5 @@
+#!/system/bin/sh
+#Enable zram based on Rom Selection
+#Uses existing compcache handler
+
+sh /system/bin/handle_compcache
