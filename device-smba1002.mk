@@ -49,7 +49,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    device/malata/smba1002/prebuilt/vold.fstab:system/etc/vold.fstab \
    device/malata/smba1002/prebuilt/ramdisk/fstab.harmony:root/fstab.harmony \
-   device/malata/smba1002/prebuilt/02zram:system/etc/init.d/02zram \
    device/malata/smba1002/prebuilt/03sysctl:system/etc/init.d/03sysctl \
    device/malata/smba1002/prebuilt/ntfs-3g:system/bin/ntfs-3g
 
