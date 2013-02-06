@@ -14,15 +14,6 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/malata/smba1002/prebuilt/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
 # Install smba1002 kernel modules from prebuilt
 $(call inherit-product, device/malata/smba1002/smba1002-modules.mk)
 
