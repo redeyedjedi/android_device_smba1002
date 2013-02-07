@@ -17,14 +17,6 @@
 # inherit from the common version first
 -include device/malata/smba_common/BoardConfigCommon.mk
 
-#Prebuilt binary kernel
-#TARGET_PREBUILT_KERNEL := device/malata/smba1002/prebuilt/kernel
-
-#Built from source kernel
-TARGET_KERNEL_CONFIG        := tegra_smba1002_defconfig
-TARGET_KERNEL_SOURCE        := kernel/malata/smba1002
-TARGET_ARCH=arm
-
 TARGET_OTA_ASSERT_DEVICE := harmony,smba1002
 
 BOARD_KERNEL_BASE := 0x10000000
