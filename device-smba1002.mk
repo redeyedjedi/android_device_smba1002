@@ -14,10 +14,31 @@
 # limitations under the License.
 #
 
+
+#RUN KERNEL HERE
+
+
+
 # Install smba1002 kernel modules from prebuilt
 $(call inherit-product, device/malata/smba1002/smba1002-modules.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/malata/smba1002/overlay
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# The gps config appropriate for this device
+#$(call inherit-product, device/common/gps/gps_us_supl.mk) <--DO WE NEED?
+
+# Inherit from smba_common
+$(call inherit-product, device/malata/smba_common/device-common.mk)
+
+# Inherit from vendor specific if exists
+$(call inherit-product-if-exists, vendor/malata/smba1002/smba1002-vendor.mk)
+
+# Camera
+PRODUCT_PACKAGES += \
+	Camera
+
+DEVICE_PACKAGE_OVERLAYS += \
+	device/malata/smba1002/overlay
 
 PRODUCT_LOCALES := en_US
 
@@ -28,10 +49,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
-
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    device/malata/smba_common/prebuilt/bcm4329.hcd:system/etc/firmware/bcm4329.hcd
 
 PRODUCT_COPY_FILES += \
     device/malata/smba1002/prebuilt/ramdisk/init.harmony.rc:root/init.harmony.rc
@@ -44,10 +61,6 @@ PRODUCT_COPY_FILES += \
    device/malata/smba1002/prebuilt/test.mp4:system/etc/test.mp4 \
    device/malata/smba1002/prebuilt/99avp_hack:system/etc/init.d/99avp_hack \
    device/malata/smba1002/prebuilt/ntfs-3g:system/xbin/ntfs-3g
-
-# Harmony Hardware
-PRODUCT_PACKAGES += \
-	libmbm-ril
         
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
@@ -61,16 +74,3 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.secure=0 \
 	persist.service.adb.enable=1
-
-# for bugmailer
-ifneq ($(TARGET_BUILD_VARIANT),user)
-	PRODUCT_PACKAGES += send_bug
-	PRODUCT_COPY_FILES += \
-		system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
-		system/extras/bugmailer/send_bug:system/bin/send_bug
-endif
-
-# Make it optional to include vendor stuff..Just to be nice ;)
-ifneq ($(TARGET_IGNORE_VENDOR),yes)
-$(call inherit-product, vendor/malata/smba1002/smba1002-vendor.mk)
-endif
