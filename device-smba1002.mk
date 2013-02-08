@@ -31,7 +31,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 $(call inherit-product, device/malata/smba_common/device-common.mk)
 
 # Install Apps
-$(call inherit-product, device/malata/smba1002/app/Android.mk)
+$(call inherit-product, device/malata/smba1002/app/drh_apps.mk)
 
 # Inherit from vendor specific if exists
 $(call inherit-product-if-exists, vendor/malata/smba1002/smba1002-vendor.mk)
