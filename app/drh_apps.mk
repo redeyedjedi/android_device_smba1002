@@ -21,6 +21,4 @@
 # are responsible for having their own logic, for fine-grained control.
 
 PRODUCT_COPY_FILES += \
-	device/malata/smba1002/app/SuperSu/system/app/Superuser.apk:system/app/Superuser.apk \
-	device/malata/smba1002/app/SuperSu/system/bin/.ext/.su:system/bin/.ext/.su \
-	device/malata/smba1002/app/SuperSu/system/xbin/su:system/xbin/su
+	device/malata/smba1002/app/SuperSu/Superuser.apk:system/app/Superuser.apk
