@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+TARGET_PREBUILT_RECOVERY_KERNEL := device/malata/smba1002/prebuilt/recovery_kernel
 #Built from source kernel
 TARGET_KERNEL_CONFIG        := tegra_smba1002_defconfig
 TARGET_KERNEL_SOURCE        := kernel/malata/smba1002
