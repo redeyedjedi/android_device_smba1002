@@ -54,8 +54,6 @@ PRODUCT_COPY_FILES += \
 	device/malata/smba1002/prebuilt/vold.fstab:system/etc/vold.fstab \
 	device/malata/smba1002/prebuilt/ramdisk/fstab.harmony:root/fstab.harmony \
 	device/malata/smba1002/prebuilt/03sysctl:system/etc/init.d/03sysctl \
-	device/malata/smba1002/prebuilt/test.mp4:system/etc/test.mp4 \
-	device/malata/smba1002/prebuilt/99avp_hack:system/etc/init.d/99avp_hack \
 	device/malata/smba1002/prebuilt/ntfs-3g:system/xbin/ntfs-3g
 
 #Set default.prop properties for root + adb
