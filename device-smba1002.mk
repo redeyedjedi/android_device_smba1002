@@ -34,7 +34,7 @@ $(call inherit-product, device/malata/smba_common/device-common.mk)
 $(call inherit-product, device/malata/smba1002/app/drh_apps.mk)
 
 # Inherit from vendor specific if exists
-$(call inherit-product-if-exists, vendor/malata/smba1002/smba1002-vendor.mk)
+$(call inherit-product-if-exists, vendor/malata/smba1002/smba1002-vendor-blobs.mk)
 
 # Camera
 PRODUCT_PACKAGES += \
